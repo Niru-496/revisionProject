@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./css/App.css";
+import "./css/Media.Queries.css";
+import "react-toastify/dist/ReactToastify.css";
+import { Routes, Route } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
+import SingleProduct from "./screens/SingleProduct";
+import Login from "./screens/Login";
+import Register from "./screens/Register";
+import CartScreen from "./screens/CartScreen";
+import ShippingScreen from "./screens/ShippingScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import PaymentScreen from "./screens/PaymentScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
+import NotFound from "./screens/NotFound";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<div>
+			<Routes>
+				<Route path="/" element={<HomeScreen />} />
+				<Route path="/products/:id" element={<SingleProduct />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
+				<Route path="/profile" element={<ProfileScreen />} />
+				<Route path={`/cart/:id`} element={<CartScreen />} />
+				<Route path="/shipping" element={<ShippingScreen />} />
+				<Route path="/payment" element={<PaymentScreen />} />
+				<Route path="/placeorder" element={<PlaceOrderScreen />} />
+				<Route path="/order" element={<OrderScreen />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+		</div>
+	);
+};
 
 export default App;
