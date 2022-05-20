@@ -22,7 +22,7 @@ export const login = (email, password) => async (dispatch) => {
 			},
 		};
 		const { data, token } = await axios.post(
-			`http://localhost:3000/login/`,
+			`https://revision1project.herokuapp.com/login/`,
 			{ email, password },
 			config
 		);
@@ -95,7 +95,7 @@ export const GetandUpdateUser = (id) => async (dispatch, getState) => {
 
 		dispatch({ type: USER_PROFILE_DETAILS_SUCCESS, payload: data });
 
-		// localStorage.setItem("userInfo", JSON.stringify(data));
+		localStorage.setItem("userInfo", JSON.stringify(data));
 	} catch (error) {
 		const message  = error.response && error.response.data.message
 					? error.response.data.message
