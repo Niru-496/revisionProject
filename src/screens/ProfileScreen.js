@@ -20,7 +20,7 @@ const dispatch = useDispatch()
                 </div>
                 <div className="author-card-details col-md-7">
                   <h5 className="author-card-name mb-2">
-                    <strong>Admin Doe</strong>
+                    <strong>Admin</strong>
                   </h5>
                   <span className="author-card-position">
                     <>Joined Dec 12 2021</>
